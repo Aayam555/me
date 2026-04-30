@@ -3,9 +3,70 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mechanical Engineering</title>
+    <title>aayamech</title>
+    <style>
+        /* Centering the entire layout */
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: white;
+            /* Using system default fonts */
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        li {
+            position: relative; /* Necessary for the custom underline positioning */
+            margin: 30px 0;
+            font-size: 2rem;
+            font-weight: 500;
+            color: black;
+            cursor: pointer;
+            text-align: center;
+            padding: 5px 10px;
+        }
+
+        /* The "Fancy" Underline: Hidden by default */
+        li::after {
+            content: '';
+            position: absolute;
+            width: 0; /* Start with no width */
+            height: 4px; /* Thickness of the line */
+            bottom: 0;
+            left: 50%; /* Start in the middle */
+            background-color: green;
+            transition: all 0.4s ease-in-out;
+            transform: translateX(-50%); /* Keeps it perfectly centered while growing */
+            border-radius: 2px;
+        }
+
+        /* Hover Effect: Grow the line */
+        li:hover::after {
+            width: 100%; /* Expand to full width of the text */
+        }
+
+        /* Slight lift effect on the text for extra 'fancy' feel */
+        li:hover {
+            transform: translateY(-2px);
+            transition: transform 0.3s ease;
+        }
+    </style>
 </head>
 <body>
-    <h1>By Aayam Shrestha</h1>
+
+    <ul>
+        <li><a style="text-decoration: none; color: black;" href="./math.html">Math</a></li>
+        <li><a style="text-decoration: none; color: black;" href="./physics.html">Physics</a></li>
+    </ul>
+
 </body>
 </html>
